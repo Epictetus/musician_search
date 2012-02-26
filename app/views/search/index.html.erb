@@ -1,13 +1,13 @@
-<html>
-  <head>
-    <title>musisian search</title>
-  </head>
-  <body>
+<%# <html> %>
+  <%# <head> %>
+    <%# <title>musisian search</title> %>
+  <%# </head> %>
+  <%# <body> %>
+    <% content_for :wikipedia do %>
     <div name="search">
-      <h1>search</h1>
+      <h1>検索</h1>
       <% unless @title.empty? %>
         <div>
-          <br />
           <%== @wiki_content %>
         </div>
           <br />
@@ -22,5 +22,6 @@
         <% end %>
       </div>
     </div>
-  </body>
-</html>
+    <% end %>
+  <%# </body> %>
+<%# </html> %>
