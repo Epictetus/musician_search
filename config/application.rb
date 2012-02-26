@@ -50,5 +50,11 @@ module ArtistSearch
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    require 'wikipedia'
+    Wikipedia.Configure {
+      domain 'ja.wikipedia.org'
+      # path   ¡Æw/api.php¡Ç
+    }
   end
 end

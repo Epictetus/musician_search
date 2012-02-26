@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>musisian search</title>
+  </head>
+  <body>
+    <div name="search">
+      <h1>search</h1>
+      <% unless @title.empty? %>
+        <div>
+          <br />
+          <%== @wiki_content %>
+        </div>
+          <br />
+          <div>
+          <%== @wiki_link %>
+          </div>
+        <% end %>
+      <div>
+        <%= form_tag :action => 'get_wiki' do %>
+          <%= text_field 'search_keys', 'name' %>
+          <%= submit_tag "hoge" %>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>
