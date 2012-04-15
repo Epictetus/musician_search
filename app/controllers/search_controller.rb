@@ -13,7 +13,7 @@ class SearchController < ApplicationController
     # end
   end
 
-  def get_info
+  def info
     @wiki = {}
     @youtube = {}
 

@@ -2,9 +2,9 @@
 	<div id="search">
 		<h1>musician-search</h1>
 		<div>
-			<%= form_tag({ action: :get_info },  remote: true ) do %>
-			<%= text_field 'search_keys', 'name' %>
-			<%= submit_tag "go!" %>
+			<%= form_tag({ action: :info }, remote: true ) do %>
+				<%= text_field 'search_keys', 'name' %>
+				<%= submit_tag "go!" %>
 			<% end %>
 		</div>
 	</div>
