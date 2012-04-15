@@ -60,8 +60,6 @@ class SearchController < ApplicationController
   end
 
   def search_at_youtube
-    require 'nokogiri'
-    require 'open-uri'
     @youtube = {}
 
     search_word = params[:search_keys][:name]
