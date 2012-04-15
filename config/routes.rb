@@ -1,4 +1,9 @@
 ArtistSearch::Application.routes.draw do
+
+  root :to => 'search#index'
+  match 'search' => 'search#index'#, :action => 'index'
+  match 'get_info' => 'search#get_info'#, :action => 'index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -49,12 +54,7 @@ ArtistSearch::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-   
-  root :to => 'search#index'
-  # match 'search' => 'search#index', :action => 'index'
-  match 'search' => 'search#index'#, :action => 'index'
-  # match 'search/getwiki' #=> 'search#get_wiki_content', :action => 'get_wiki_content'
-  match 'search/get-wiki' => "search#get_wiki"
+
 
   # See how all your routes lay out with "rake routes"
 

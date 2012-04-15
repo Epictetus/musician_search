@@ -1,0 +1,12 @@
+<div name="youtube">
+<%# <iframe width="560" height="315" src="http://www.youtube.com/embed/IZsa3ak0S1Y" frameborder="0" allowfullscreen></iframe> %>
+  <% unless @youtube[:title].blank? %>
+    <div>
+      <%== @youtube[:title] %>
+    </div>
+    <br />
+    <div>
+      <%== @youtube[:contents] %>
+    </div>
+  <% end %>
+</div>

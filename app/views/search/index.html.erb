@@ -1,27 +1,13 @@
-<%# <html> %>
-  <%# <head> %>
-    <%# <title>musisian search</title> %>
-  <%# </head> %>
-  <%# <body> %>
-    <% content_for :wikipedia do %>
-    <div name="search">
-      <h1>検索</h1>
-      <% unless @title.empty? %>
+    <% content_for :search do %>
+      <div id="search">
+        <h1>musician-search</h1>
         <div>
-          <%== @wiki_content %>
+          <%= form_tag({ action: :get_info },  remote: true ) do %>
+            <%= text_field 'search_keys', 'name' %>
+            <%= submit_tag "go!" %>
+          <% end %>
         </div>
-          <br />
-          <div>
-          <%== @wiki_link %>
-          </div>
-        <% end %>
-      <div>
-        <%= form_tag :action => 'get_wiki' do %>
-          <%= text_field 'search_keys', 'name' %>
-          <%= submit_tag "hoge" %>
-        <% end %>
       </div>
-    </div>
+      <div id='search_result'>
+      </div>
     <% end %>
-  <%# </body> %>
-<%# </html> %>

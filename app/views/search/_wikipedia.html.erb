@@ -1,0 +1,11 @@
+<div name="wikipedia">
+  <% unless @wiki[:title].blank? %>
+    <div>
+      <%== @wiki[:content] %>
+    </div>
+    <br />
+    <div>
+      <%== @wiki[:link] %>
+    </div>
+  <% end %>
+</div>
