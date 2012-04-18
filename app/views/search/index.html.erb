@@ -1,13 +1,13 @@
 <% content_for :search do %>
-	<div id="search">
-		<h1>musician-search</h1>
-		<div>
-			<%= form_tag({ action: :info }, remote: true ) do %>
-				<%= text_field 'search_keys', 'name' %>
-				<%= submit_tag "go!" %>
-			<% end %>
-		</div>
-	</div>
-	<div id='search_result'>
-	</div>
+  <div id="search">
+    <h1>musician-search</h1>
+    <div>
+      <%= form_tag({ action: :info }, remote: true ) do %>
+        <%= text_field 'search_keys', 'name' %>
+        <%= submit_tag "go!" %>
+      <% end %>
+    </div>
+  </div>
+  <div id='search_result'>
+  </div>
 <% end %>

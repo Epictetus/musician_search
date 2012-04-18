@@ -23,12 +23,13 @@ end
 gem 'jquery-rails'
 
 group :production do
-	gem 'pg'
+  gem 'pg'
 end
 
-group :development do
+group :development, :test do
   gem 'pry-rails'
-	gem 'sqlite3'
+  gem 'sqlite3'
+  gem 'rspec-rails'
 end
 
 # To use ActiveModel has_secure_password
