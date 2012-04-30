@@ -1,1 +1,1 @@
-$('#search_result').html("<%= j(render(:partial => 'wikipedia', :object => @wiki)) %><%= j(render(:partial => 'youtube', :object => @youtube)) %>");
+$('#search_result').html("<%= j(render(:partial => 'wikipedia', :object => @wiki)) %><br><%= j(render(:partial => 'youtube', :object => @youtube, locals: { key: @keywords } )) %>");

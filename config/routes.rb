@@ -1,8 +1,7 @@
 ArtistSearch::Application.routes.draw do
 
-  root :to => 'search#index'
-  match 'search' => 'search#index'#, :action => 'index'
-  match 'info' => 'search#info'#, :action => 'index'
+  root :to => 'search#info'
+  match 'search' => 'search#info'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
