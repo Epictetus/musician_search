@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.1'
@@ -11,6 +12,7 @@ gem "wikipedia-client"
 gem 'wikicloth'
 gem 'sanitize'
 gem 'nokogiri'
+gem 'amazon-ecs'
 
 # Gems used only for assets and not required
 # in production environments by default.

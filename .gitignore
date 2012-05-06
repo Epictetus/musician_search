@@ -6,3 +6,4 @@ tmp/
 .rvmrc
 app/assets/**/*.*
 *.swp
+config/amazon_config.yml

@@ -54,7 +54,19 @@ module ArtistSearch
     require 'wikipedia'
     Wikipedia.Configure {
       domain 'ja.wikipedia.org'
-      # path   ¡Æw/api.php¡Ç
     }
+
+    conf = YAML.load_file('./config/amazon_config.yml') if File.exists?('./config/amazon_config.yml')
+    ENV["ASSOCIATE_TAG"] ||= conf["associate_tag"]
+    ENV["AWS_ACCESS_KEY_ID"] ||= conf["aws_access_key_id"]
+    ENV["AWS_SECRET_KEY"] ||= conf["aws_secret_key"]
+
+    require 'amazon/ecs'
+    Amazon::Ecs.options = {
+      :associate_tag =>     ENV["ASSOCIATE_TAG"],
+      :AWS_access_key_id => ENV["AWS_ACCESS_KEY_ID"],
+      :AWS_secret_key =>    ENV["AWS_SECRET_KEY"]
+    }
+
   end
 end

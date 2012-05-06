@@ -1,12 +1,9 @@
 <div name="youtube">
-  <div>
-    <h2>youtube</h2>
-    <%= link_to "検索結果一覧はコチラをクリック", "http://www.youtube.com/results?search_query=#{key}", { target: "_blank" } %>
-  </div>
-  <br>
+  <h2>youtube 関連動画</h2>
   <% @youtube.each do |y| %>
-    <div>
-      <%= link_to y[:title], y[:url], { target: "_blank" } %>
-    </div>
+    <%= link_to y[:title], y[:url], { target: "_blank" } %>
+    <br>
   <% end %>
+  <br>
+  <%= link_to "更に検索...", "http://www.youtube.com/results?search_query=#{key}", { target: "_blank" } %>
 </div>

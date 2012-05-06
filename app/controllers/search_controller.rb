@@ -6,10 +6,12 @@ class SearchController < ApplicationController
   def info
     @wiki = {}
     @youtube = {}
+    @amazon = []
 
     return if params[:search_keys].blank? || params[:search_keys][:name].blank?
     search_at_wikipedia
     search_at_youtube
+    search_at_amazon
 
     # respond_to do |format|
        # format.js
@@ -45,13 +47,26 @@ class SearchController < ApplicationController
     else
       @wiki[:link] = "詳細はこちら:<a target='_blank' href=http://ja.wikipedia.org/wiki/#{search_word}>#{@wiki[:title]}</a>"
     end
-
   end
 
   def search_at_youtube
     @keywords = params[:search_keys][:name]
     @keywords = @keywords.gsub(" ","+").gsub("　","+")
     @youtube =  Youtube.video_info(@keywords)
+  end
+
+  def search_at_amazon
+    require 'amazon/ecs'
+    @amazon = []
+    @keywords = params[:search_keys][:name]
+    @keywords = @keywords.gsub(" ","+").gsub("　","+")
+
+    res = Amazon::Ecs.item_search(@keywords, :search_index => 'All', country: 'jp')
+
+    @item = {}
+    res.items.each do |item|
+      @amazon << { title: item.get("ItemAttributes/Title"), url: item.get("DetailPageURL"), category: item.get("ItemAttributes/ProductGroup") }
+    end
   end
 
 end

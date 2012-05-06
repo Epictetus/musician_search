@@ -1,0 +1,9 @@
+<div name="amazon">
+  <h2>amazon 関連商品</h2>
+  <% @amazon.each do |ama| %>
+    <%= link_to ama[:title], ama[:url], { target: "_blank" } %> : <%= ama[:category] %>
+    <br>
+  <% end %>
+  <br>
+  <%= link_to "更に検索...", "http://www.amazon.co.jp/s/ref=nb_sb_noss_1?field-keywords=#{key}", { target: "_blank" } %>
+</div>
